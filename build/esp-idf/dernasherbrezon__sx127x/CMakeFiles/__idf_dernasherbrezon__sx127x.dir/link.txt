@@ -1,0 +1,2 @@
+/Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc libdernasherbrezon__sx127x.a CMakeFiles/__idf_dernasherbrezon__sx127x.dir/src/sx127x.c.obj CMakeFiles/__idf_dernasherbrezon__sx127x.dir/src/sx127x_esp_spi.c.obj
+/Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib libdernasherbrezon__sx127x.a

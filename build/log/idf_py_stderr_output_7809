@@ -1,0 +1,4 @@
+Command: make -j 12 all
+/Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/io.c:6:13: warning: 'update_duty' declared 'static' but never defined [-Wunused-function]
+    6 | static void update_duty(uint16_t duty);
+      |             ^~~~~~~~~~~

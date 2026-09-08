@@ -1,0 +1,4 @@
+Command: make -j 12 all
+/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.c:57:13: warning: 'test_tsk' defined but not used [-Wunused-function]
+   57 | static void test_tsk(void *pv){
+      |             ^~~~~~~~

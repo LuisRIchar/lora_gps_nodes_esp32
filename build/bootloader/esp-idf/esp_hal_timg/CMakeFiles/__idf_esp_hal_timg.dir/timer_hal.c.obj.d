@@ -1,0 +1,37 @@
+esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/timer_hal.c.obj: \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_timg/timer_hal.c \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /Users/richar/code/esp-idf/iot/lora-nodes/build/bootloader/config/sdkconfig.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_timg/include/hal/timer_hal.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_timg/esp32s3/include/hal/timer_ll.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
+ /Users/richar/toolchains/esp/esp-idf/components/hal/platform_port/include/hal/assert.h \
+ /Users/richar/toolchains/esp/esp-idf/components/hal/platform_port/include/hal/misc.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_timg/include/hal/timer_types.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/include/soc/soc_caps_eval.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/clk_tree_defs.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_timg/esp32s3/include/hal/timg_ll.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/register/soc/timer_group_struct.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/register/soc/system_struct.h

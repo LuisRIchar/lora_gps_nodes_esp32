@@ -1,0 +1,22 @@
+esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir/esp32s3/usb_dwc_periph.c.obj: \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_usb/esp32s3/usb_dwc_periph.c \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/gpio_sig_map.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/interrupts.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /Users/richar/code/esp-idf/iot/lora-nodes/build/bootloader/config/sdkconfig.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /Users/richar/toolchains/esp/esp-idf/components/esp_hal_usb/include/soc/usb_periph.h \
+ /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/gpio_pins.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h \
+ /Users/richar/toolchains/esp/esp-idf/components/soc/include/soc/soc_caps_eval.h

@@ -1,0 +1,11 @@
+Command: make -j 12 all
+/Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/lora_spi.c:85:1: error: ignoring attribute 'section (".iram1.1")' because it conflicts with previous 'section (".iram1.0")' [-Werror=attributes]
+   85 | static void IRAM_ATTR lora_DIO0_isr_handler(void *arg) {
+      | ^~~~~~
+/Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/lora_spi.c:18:23: note: previous declaration here
+   18 | static void IRAM_ATTR lora_DIO0_isr_handler(void *arg);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [esp-idf/drivers/CMakeFiles/__idf_drivers.dir/lora_spi.c.obj] Error 1
+make[1]: *** [esp-idf/drivers/CMakeFiles/__idf_drivers.dir/all] Error 2
+make: *** [all] Error 2

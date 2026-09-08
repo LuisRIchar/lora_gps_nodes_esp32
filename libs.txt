@@ -1,0 +1,1 @@
+idf.py add-dependency "dernasherbrezon/sx127x^5.0.1"
