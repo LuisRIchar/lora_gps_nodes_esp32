@@ -65,10 +65,11 @@ void test_tasks() {
 }
 
 static void lora_tsk(void *pv){
-
+    printf("Node number: %d\n", get_io_num() + 1); // Print the node number (1-based)
     while(1){
 
         rx_result_t result = receive_data();
+        
 
         if (result == RX_RESULT_TIMEOUT) {
 

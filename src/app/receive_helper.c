@@ -45,8 +45,13 @@ rx_result_t receive_data() {
 
             decrypted[decrypted_len] = '\0';
             printf("Counter: %lu | Decrypted: %s\n", (unsigned long)rx_counter, (char *)decrypted);
-            toggle_led();
-            buzzer_sound();
+            if (  decrypted_len >= 3 && strncmp((const char *)decrypted, "Web", 3) == 0) {
+                toggle_led();
+                buzzer_sound();
+            } else {
+                printf("Received message does not match expected format\n");
+                return RX_RESULT_ERROR; // Received message does not match expected format
+            }
             return RX_RESULT_OK; // Message received and processed successfully
         }
     return RX_RESULT_TIMEOUT;

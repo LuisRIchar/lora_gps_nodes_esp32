@@ -23,7 +23,7 @@ void toggle_led() {
 }
 
 bool get_io_num() {
-    return gpio_get_level(IO_BAT);
+    return gpio_get_level(IO_BAT); 
 }
 
 void buzzer_init() {

@@ -58,7 +58,5 @@ void send_message() {
 static void print_helper() {
     if(gps_result(&gps_data) && gps_data.lat != 0.0 && gps_data.lon != 0.0) {
         printf("GPS Data: Latitude: %.6f, Longitude: %.6f\n", gps_data.lat, gps_data.lon);
-    } else {
-        printf("No valid GPS data received\n");
-    }
+    } 
 }
