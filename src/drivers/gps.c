@@ -2,17 +2,40 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/semphr.h"
 #include "driver/uart.h"
 #include "stdlib.h"
 
 #include "io.h"
 
-static float nmea_to_decimal(const char *nmea_val, char direction);
+static double nmea_to_decimal(const char *nmea_val, char direction);
 static void parser_gps(const char* sentence, gps_data_t* gps_data);
+static void gps_reader_task(void *pvParameters);
 
 static char line_buffer[128];           // Buffer to hold a single line of GPS data
 static int line_index = 0;
 static uint8_t gps_buffer[256];         // Buffer to hold incoming GPS data of uart
+
+static gps_data_t s_latest_gps = {0};
+static SemaphoreHandle_t s_gps_mutex = NULL;
+static StaticSemaphore_t s_gps_mutex_buffer;
+
+static TaskHandle_t s_gps_task_handle = NULL;
+static StackType_t s_gps_task_stack[2048];
+static StaticTask_t s_gps_task_buffer;
+
+static void gps_reader_task(void *pvParameters) {
+    gps_data_t temp_gps = {0};
+    while (1) {
+        if (gps_result(&temp_gps) && temp_gps.valid) {
+            if (s_gps_mutex != NULL && xSemaphoreTake(s_gps_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+                s_latest_gps = temp_gps;
+                xSemaphoreGive(s_gps_mutex);
+            }
+        }
+        vTaskDelay(pdMS_TO_TICKS(200));
+    }
+}
 
 void gps_init() {
     // Initialize GPS
@@ -28,6 +51,34 @@ void gps_init() {
     uart_driver_install(UART_NUM_1, 1024 * 2, 0, 0, NULL, 0);
     uart_param_config(UART_NUM_1, &uart_config);
     uart_set_pin(UART_NUM_1, IO_UART_TX, IO_UART_RX, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+
+    if (s_gps_mutex == NULL) {
+        s_gps_mutex = xSemaphoreCreateMutexStatic(&s_gps_mutex_buffer);
+    }
+
+    if (s_gps_task_handle == NULL) {
+        s_gps_task_handle = xTaskCreateStatic(
+            gps_reader_task,
+            "gps_task",
+            (uint32_t)(sizeof(s_gps_task_stack) / sizeof(StackType_t)),
+            NULL,
+            4,
+            s_gps_task_stack,
+            &s_gps_task_buffer
+        );
+    }
+}
+
+bool gps_get_latest(gps_data_t* dest) {
+    if (dest == NULL || s_gps_mutex == NULL) {
+        return false;
+    }
+    if (xSemaphoreTake(s_gps_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+        *dest = s_latest_gps;
+        xSemaphoreGive(s_gps_mutex);
+        return dest->valid;
+    }
+    return false;
 }
 
 bool gps_result(gps_data_t* gps_data) {
@@ -119,12 +170,12 @@ static void parser_gps( const char* sentence, gps_data_t* gps_data){
 *   We then convert the degrees to decimal degrees. Because mapping systems use decimal degrees, we convert 
 *   the minutes to decimal degrees by dividing by 60.
 */
-static float nmea_to_decimal(const char *nmea_val, char direction) {
+static double nmea_to_decimal(const char *nmea_val, char direction) {
     
-    float raw = strtof(nmea_val, NULL);                 // Convert string to float
-    int degrees = (int)(raw / 100.0f);                             // Extract degrees
-    float minutes = raw - (float)(degrees * 100.0f);               // Extract minutes       
-    float decimal = (float)degrees + (minutes / 60.0f);            // Convert to decimal degrees
+    double raw = strtod(nmea_val, NULL);                           // Convert string to double
+    int degrees = (int)(raw / 100.0);                              // Extract degrees
+    double minutes = raw - (double)(degrees * 100.0);              // Extract minutes       
+    double decimal = (double)degrees + (minutes / 60.0);           // Convert to decimal degrees
 
     if(direction == 'S' || direction == 'W') {
         decimal = -decimal;                                        // Negate for South and West

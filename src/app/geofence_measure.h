@@ -11,3 +11,4 @@ typedef struct {
 
 void start_measure_of_geofence();
 QueueHandle_t get_geofence_queue();
+bool geofence_on_target();

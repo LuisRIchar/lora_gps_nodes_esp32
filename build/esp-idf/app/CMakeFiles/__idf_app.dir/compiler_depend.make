@@ -249,6 +249,7 @@ esp-idf/app/CMakeFiles/__idf_app.dir/send_helper.c.obj: /Users/richar/code/esp-i
   /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
   /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h \
   config/sdkconfig.h \
+  /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.h \
   /Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_helper.h \
   /Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/gps.h \
   /Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/io.h \

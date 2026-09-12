@@ -64,12 +64,3 @@ void buzzer_sound() {
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 0);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
 }
-
-void buzzer_loudness(uint32_t level) {
-    if (level > 100) {
-        level = 100; 
-    }
-    uint32_t duty = (level * 2047U) / 100; // Convert percentage to duty cycle
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, duty);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-}

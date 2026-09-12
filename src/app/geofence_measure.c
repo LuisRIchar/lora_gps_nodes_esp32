@@ -8,7 +8,7 @@
 
 #define EARTH_RADIUS 6371000.0 // in meters
 #define DEG_TO_RAD (M_PI / 180.0)
-#define GEOFENCE_THRESHOLD_METERS 10.0 // 10 meters threshold
+#define GEOFENCE_THRESHOLD_METERS 20.0 // 20 meters threshold
 #define QUEUE_LENGTH 10
 
 static TaskHandle_t geofence_task_handle;
@@ -20,6 +20,8 @@ static double calculated_distance_meters(double lat1, double lon1, double lat2, 
 
 static StaticQueue_t geofence_queue_struct;
 static uint8_t geofence_queue_buffer[QUEUE_LENGTH * sizeof(geofence_coordinates_t)];
+
+static volatile bool geofence_on_target_flag = false; // Flag to indicate if the device is on target
 
 static QueueHandle_t geofence_queue = NULL;
 
@@ -63,25 +65,24 @@ static void geofence_measure_tsk(void *pv) {
         }
 
         if (has_target_coordinates) {
-            if (gps_result(&gps_data) && gps_data.valid) {
+            if (gps_get_latest(&gps_data) && gps_data.valid) {
                 double distance = calculated_distance_meters(gps_data.lat, gps_data.lon, coordinates.latitude, coordinates.longitude);
                 printf("Current GPS: %.6f, %.6f | Target: %.6f, %.6f | Distance: %.2f meters\n",
                        gps_data.lat, gps_data.lon, coordinates.latitude, coordinates.longitude, distance);
 
                 if (distance > GEOFENCE_THRESHOLD_METERS) { 
-                    double excess = distance - GEOFENCE_THRESHOLD_METERS;
-                    uint32_t loudness_level = (uint32_t)((excess / 50.0) * 100.0); 
-                    if (loudness_level > 100U) loudness_level = 100U;
-                    if (loudness_level < 20U) loudness_level = 20U;
-                    buzzer_loudness(loudness_level);
+                    buzzer_sound(); 
+                    buzzer_sound();
+                    buzzer_sound();
+                    geofence_on_target_flag = false; // Clear the flag when not on target
                 } else {
-                    buzzer_loudness(0);
+                    geofence_on_target_flag = true; // Set the flag when on target
                 }
             } else {
                 printf("Waiting for valid GPS fix...\n");
             }
         } 
-        vTaskDelay(pdMS_TO_TICKS(1000)); // Delay for 1 seconds
+        vTaskDelay(pdMS_TO_TICKS(2000)); // Delay for 2  seconds
     }
 }
 
@@ -137,4 +138,8 @@ static double calculated_distance_meters(double lat1, double lon1, double lat2, 
     double y = delta_phi;
 
     return EARTH_RADIUS * sqrt(( x * x ) +( y * y )); // Distance in meters
+}
+
+bool geofence_on_target(){
+    return geofence_on_target_flag;
 }

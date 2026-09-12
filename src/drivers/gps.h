@@ -9,3 +9,4 @@ typedef struct {
 
 void gps_init();
 bool gps_result(gps_data_t* gps_data);
+bool gps_get_latest(gps_data_t* dest);

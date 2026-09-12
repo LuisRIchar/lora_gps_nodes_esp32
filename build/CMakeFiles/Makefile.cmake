@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/richar/code/esp-idf/iot/lora-nodes/.git/HEAD"
-  "/Users/richar/code/esp-idf/iot/lora-nodes/.git/refs/heads/main"
+  "/Users/richar/code/esp-idf/iot/lora-nodes/.git/refs/heads/geofence_code"
   "/Users/richar/code/esp-idf/iot/lora-nodes/CMakeLists.txt"
   "CMakeFiles/4.4.0/CMakeASMCompiler.cmake"
   "CMakeFiles/4.4.0/CMakeCCompiler.cmake"
