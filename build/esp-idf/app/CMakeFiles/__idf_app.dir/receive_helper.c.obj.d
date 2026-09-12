@@ -111,4 +111,5 @@ esp-idf/app/CMakeFiles/__idf_app.dir/receive_helper.c.obj: \
  /Users/richar/toolchains/esp/esp-idf/components/soc/esp32s3/include/soc/gpio_pins.h \
  /Users/richar/toolchains/esp/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h \
  /Users/richar/toolchains/esp/esp-idf/components/esp_hw_support/etm/include/esp_etm.h \
- /Users/richar/code/esp-idf/iot/lora-nodes/src/util/crypto.h
+ /Users/richar/code/esp-idf/iot/lora-nodes/src/util/crypto.h \
+ /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.h

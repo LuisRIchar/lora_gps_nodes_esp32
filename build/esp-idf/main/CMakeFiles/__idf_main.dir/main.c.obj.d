@@ -97,4 +97,5 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /Users/richar/toolchains/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
  /Users/richar/toolchains/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /Users/richar/toolchains/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
- /Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.h
+ /Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.h \
+ /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.h

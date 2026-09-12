@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c" "esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj" "gcc" "esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj.d"
   "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/receive_helper.c" "esp-idf/app/CMakeFiles/__idf_app.dir/receive_helper.c.obj" "gcc" "esp-idf/app/CMakeFiles/__idf_app.dir/receive_helper.c.obj.d"
   "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_helper.c" "esp-idf/app/CMakeFiles/__idf_app.dir/send_helper.c.obj" "gcc" "esp-idf/app/CMakeFiles/__idf_app.dir/send_helper.c.obj.d"
   "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.c" "esp-idf/app/CMakeFiles/__idf_app.dir/send_receive.c.obj" "gcc" "esp-idf/app/CMakeFiles/__idf_app.dir/send_receive.c.obj.d"

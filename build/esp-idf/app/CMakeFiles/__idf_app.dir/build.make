@@ -114,11 +114,26 @@ esp-idf/app/CMakeFiles/__idf_app.dir/receive_helper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_app.dir/receive_helper.c.s"
 	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/richar/code/esp-idf/iot/lora-nodes/src/app/receive_helper.c -o CMakeFiles/__idf_app.dir/receive_helper.c.s
 
+esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj: esp-idf/app/CMakeFiles/__idf_app.dir/flags.make
+esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj: /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c
+esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj: esp-idf/app/CMakeFiles/__idf_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/richar/code/esp-idf/iot/lora-nodes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj"
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj -MF CMakeFiles/__idf_app.dir/geofence_measure.c.obj.d -o CMakeFiles/__idf_app.dir/geofence_measure.c.obj -c /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c
+
+esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_app.dir/geofence_measure.c.i"
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c > CMakeFiles/__idf_app.dir/geofence_measure.c.i
+
+esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_app.dir/geofence_measure.c.s"
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && /Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c -o CMakeFiles/__idf_app.dir/geofence_measure.c.s
+
 # Object files for target __idf_app
 __idf_app_OBJECTS = \
 "CMakeFiles/__idf_app.dir/send_receive.c.obj" \
 "CMakeFiles/__idf_app.dir/send_helper.c.obj" \
-"CMakeFiles/__idf_app.dir/receive_helper.c.obj"
+"CMakeFiles/__idf_app.dir/receive_helper.c.obj" \
+"CMakeFiles/__idf_app.dir/geofence_measure.c.obj"
 
 # External object files for target __idf_app
 __idf_app_EXTERNAL_OBJECTS =
@@ -126,9 +141,10 @@ __idf_app_EXTERNAL_OBJECTS =
 esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/send_receive.c.obj
 esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/send_helper.c.obj
 esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/receive_helper.c.obj
+esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj
 esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/build.make
 esp-idf/app/libapp.a: esp-idf/app/CMakeFiles/__idf_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/richar/code/esp-idf/iot/lora-nodes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libapp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/richar/code/esp-idf/iot/lora-nodes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libapp.a"
 	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && $(CMAKE_COMMAND) -P CMakeFiles/__idf_app.dir/cmake_clean_target.cmake
 	cd /Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_app.dir/link.txt --verbose=$(VERBOSE)
 

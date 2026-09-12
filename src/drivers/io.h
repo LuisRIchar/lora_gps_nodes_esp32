@@ -24,3 +24,4 @@ void toggle_led();
 bool get_io_num();
 void buzzer_init();
 void buzzer_sound();
+void buzzer_loudness(uint32_t level);

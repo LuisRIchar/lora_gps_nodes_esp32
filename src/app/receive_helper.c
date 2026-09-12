@@ -9,9 +9,11 @@
 #include "lora_spi.h"
 #include "io.h"     
 #include "crypto.h" 
+#include "geofence_measure.h"
 #include <stdbool.h>
 
 static lora_msg_t msg = {0};
+static geofence_coordinates_t geofence_coordinates = {0.0f, 0.0f};
 
 rx_result_t receive_data() {
     // Randomize timeout between 4000 and 6000 ms to avoid synchronization
@@ -46,8 +48,25 @@ rx_result_t receive_data() {
             decrypted[decrypted_len] = '\0';
             printf("Counter: %lu | Decrypted: %s\n", (unsigned long)rx_counter, (char *)decrypted);
             if (  decrypted_len >= 3 && strncmp((const char *)decrypted, "Web", 3) == 0) {
-                toggle_led();
-                buzzer_sound();
+                int matched = sscanf((const char *)decrypted, "Web Latitude: %lf, Longitude: %lf",
+                                     &geofence_coordinates.latitude, &geofence_coordinates.longitude);
+                if (matched != 2) {
+                    matched = sscanf((const char *)decrypted, "Web:%lf,%lf",
+                                     &geofence_coordinates.latitude, &geofence_coordinates.longitude);
+                }
+
+                if (matched != 2) {
+                    printf("Failed to parse geofence coordinates from message: %s\n", (char *)decrypted);
+                    return RX_RESULT_ERROR; // Failed to parse geofence coordinates
+                } else {
+                    if(xQueueSend(get_geofence_queue(), &geofence_coordinates, pdMS_TO_TICKS(1000)) != pdTRUE) {
+                        return RX_RESULT_ERROR; // Full queue, failed to send geofence coordinates
+                    } 
+                    toggle_led();
+                    buzzer_sound();
+                }
+
+                return RX_RESULT_OK; // Geofence coordinates received and processed successfully
             } else {
                 printf("Received message does not match expected format\n");
                 return RX_RESULT_ERROR; // Received message does not match expected format

@@ -175,6 +175,30 @@ __idf_app/fast:
 	cd /Users/richar/code/esp-idf/iot/lora-nodes/build && $(MAKE) $(MAKESILENT) -f esp-idf/app/CMakeFiles/__idf_app.dir/build.make esp-idf/app/CMakeFiles/__idf_app.dir/build
 .PHONY : __idf_app/fast
 
+geofence_measure.obj: geofence_measure.c.obj
+.PHONY : geofence_measure.obj
+
+# target to build an object file
+geofence_measure.c.obj:
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build && $(MAKE) $(MAKESILENT) -f esp-idf/app/CMakeFiles/__idf_app.dir/build.make esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.obj
+.PHONY : geofence_measure.c.obj
+
+geofence_measure.i: geofence_measure.c.i
+.PHONY : geofence_measure.i
+
+# target to preprocess a source file
+geofence_measure.c.i:
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build && $(MAKE) $(MAKESILENT) -f esp-idf/app/CMakeFiles/__idf_app.dir/build.make esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.i
+.PHONY : geofence_measure.c.i
+
+geofence_measure.s: geofence_measure.c.s
+.PHONY : geofence_measure.s
+
+# target to generate assembly for a file
+geofence_measure.c.s:
+	cd /Users/richar/code/esp-idf/iot/lora-nodes/build && $(MAKE) $(MAKESILENT) -f esp-idf/app/CMakeFiles/__idf_app.dir/build.make esp-idf/app/CMakeFiles/__idf_app.dir/geofence_measure.c.s
+.PHONY : geofence_measure.c.s
+
 receive_helper.obj: receive_helper.c.obj
 .PHONY : receive_helper.obj
 
@@ -260,6 +284,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_app"
+	@echo "... geofence_measure.obj"
+	@echo "... geofence_measure.i"
+	@echo "... geofence_measure.s"
 	@echo "... receive_helper.obj"
 	@echo "... receive_helper.i"
 	@echo "... receive_helper.s"

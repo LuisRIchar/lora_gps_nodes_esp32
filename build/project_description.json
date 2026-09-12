@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "lora-nodes",
-    "project_version":    "1",
+    "project_version":    "6c1e4ac-dirty",
     "project_path":       "/Users/richar/code/esp-idf/iot/lora-nodes",
     "idf_path":           "/Users/richar/toolchains/esp/esp-idf",
     "build_dir":          "/Users/richar/code/esp-idf/iot/lora-nodes/build",
@@ -40,7 +40,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/richar/code/esp-idf/iot/lora-nodes/build/esp-idf/app/libapp.a",
-            "sources": [ "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.c", "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_helper.c", "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/receive_helper.c" ],
+            "sources": [ "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_receive.c", "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/send_helper.c", "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/receive_helper.c", "/Users/richar/code/esp-idf/iot/lora-nodes/src/app/geofence_measure.c" ],
             "include_dirs": [ "." ]
         },
         "app_trace": {

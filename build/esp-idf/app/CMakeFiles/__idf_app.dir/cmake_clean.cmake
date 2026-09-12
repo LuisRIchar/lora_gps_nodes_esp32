@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/__idf_app.dir/geofence_measure.c.obj"
+  "CMakeFiles/__idf_app.dir/geofence_measure.c.obj.d"
   "CMakeFiles/__idf_app.dir/receive_helper.c.obj"
   "CMakeFiles/__idf_app.dir/receive_helper.c.obj.d"
   "CMakeFiles/__idf_app.dir/send_helper.c.obj"
