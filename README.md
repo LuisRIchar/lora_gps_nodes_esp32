@@ -33,14 +33,6 @@ Web:19.432608,-99.133209
 
 `receive_helper.c` parses it, pushes it into the geofence queue and confirms it with the LED and one buzzer melody. From then on, `geofence_measure_task` computes the distance between the current fix and the target every 2 s. If it is greater than `GEOFENCE_THRESHOLD_METERS` (20 m), the buzzer plays three times and the node reports `On Target: 0`; inside the radius it reports `On Target: 1`. A new target message replaces the previous one.
 
-The distance uses an equirectangular approximation instead of Haversine:
-
-```
-x = Δλ · cos((φ1 + φ2) / 2)
-y = Δφ
-d = R · √(x² + y²)        R = 6 371 000 m
-```
-
 Latitude and longitude are angles, so the east–west difference is scaled by the cosine of the mean latitude before applying Pythagoras. For perimeters under 1 km the curvature of the Earth is negligible and the error stays below 0.1 %, while saving the `sin`/`asin`/`atan2` calls that Haversine needs on every iteration.
 
 ### Packet format

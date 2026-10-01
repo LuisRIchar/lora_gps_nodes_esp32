@@ -33,13 +33,6 @@ Web:19.432608,-99.133209
 
 `receive_helper.c` lo parsea, lo mete en la cola de la geocerca y lo confirma con el LED y una melodía del buzzer. A partir de ahí, `geofence_measure_task` calcula cada 2 s la distancia entre el fix actual y el objetivo. Si es mayor que `GEOFENCE_THRESHOLD_METERS` (20 m), el buzzer suena tres veces y el nodo reporta `On Target: 0`; dentro del radio reporta `On Target: 1`. Un nuevo mensaje de objetivo reemplaza al anterior.
 
-La distancia se calcula con una aproximación equirectangular en lugar de Haversine:
-
-```
-x = Δλ · cos((φ1 + φ2) / 2)
-y = Δφ
-d = R · √(x² + y²)        R = 6 371 000 m
-```
 
 Latitud y longitud son ángulos, así que la diferencia este–oeste se escala por el coseno de la latitud media antes de aplicar Pitágoras. Para perímetros menores a 1 km la curvatura de la Tierra es despreciable y el error queda por debajo del 0.1 %, y se ahorran las llamadas a `sin`/`asin`/`atan2` que Haversine necesita en cada iteración.
 
@@ -134,7 +127,3 @@ idf.py -p PORT flash monitor
 - Los paquetes no llevan tag de autenticación; un texto cifrado modificado se descifra como basura en lugar de rechazarse.
 - Solo hay un objetivo activo a la vez y el radio es una constante de compilación.
 - `test_tasks()` en `send_receive.c` es una prueba de eco en texto plano que se conserva para bring-up; no se llama desde `app_main()`.
-
-## Licencia
-
-MIT. Ver [LICENSE](LICENSE).
