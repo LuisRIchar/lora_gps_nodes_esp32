@@ -134,3 +134,7 @@ idf.py -p PORT flash monitor
 - Packets carry no authentication tag; a modified ciphertext decrypts to garbage instead of being rejected.
 - Only one target is active at a time, and the radius is a compile-time constant.
 - `test_tasks()` in `send_receive.c` is a plain-text echo test kept for bring-up; it is not called from `app_main()`.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

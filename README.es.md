@@ -134,3 +134,7 @@ idf.py -p PORT flash monitor
 - Los paquetes no llevan tag de autenticación; un texto cifrado modificado se descifra como basura en lugar de rechazarse.
 - Solo hay un objetivo activo a la vez y el radio es una constante de compilación.
 - `test_tasks()` en `send_receive.c` es una prueba de eco en texto plano que se conserva para bring-up; no se llama desde `app_main()`.
+
+## Licencia
+
+MIT. Ver [LICENSE](LICENSE).
