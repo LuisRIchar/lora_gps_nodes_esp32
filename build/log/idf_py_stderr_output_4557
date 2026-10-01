@@ -1,9 +1,0 @@
-Command: make -j 12 all
-/Users/richar/code/esp-idf/iot/lora-nodes/src/drivers/io.c:3:10: fatal error: driver/ledc.h: No such file or directory
-    3 | #include "driver/ledc.h"
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [esp-idf/drivers/CMakeFiles/__idf_drivers.dir/io.c.obj] Error 1
-make[2]: *** Waiting for unfinished jobs....
-make[1]: *** [esp-idf/drivers/CMakeFiles/__idf_drivers.dir/all] Error 2
-make: *** [all] Error 2

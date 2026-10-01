@@ -1,1 +1,14 @@
-/build
+# ESP-IDF build output
+build/
+
+# Fetched by the IDF Component Manager from dependencies.lock
+managed_components/
+
+# menuconfig backup
+sdkconfig.old
+
+# clangd index
+.cache/
+
+# macOS
+.DS_Store

@@ -1,2 +1,0 @@
-/Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc libdrivers.a CMakeFiles/__idf_drivers.dir/io.c.obj CMakeFiles/__idf_drivers.dir/lora_spi.c.obj CMakeFiles/__idf_drivers.dir/gps.c.obj
-/Users/richar/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib libdrivers.a

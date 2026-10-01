@@ -1,2 +1,0 @@
-source /Users/richar/code/esp-idf/iot/lora-nodes/build/bootloader/gdbinit/symbols
-source /Users/richar/code/esp-idf/iot/lora-nodes/build/bootloader/gdbinit/connect
